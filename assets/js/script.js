@@ -88,8 +88,8 @@ function updateTotalMoney() {
 function startGame () {
     startGameElement.style.visibility = 'hidden';
     nextQuestionElement.style.visibility = 'hidden';
-    totalMoney = 1000000; // Reset total money
     currentIndex = 0;
+    totalMoney = 1000000; // Reset total money
     updateTotalMoney()
     showQuestion();    
 }
@@ -97,6 +97,7 @@ function startGame () {
 
 // 20 lines for showQuestion function
 function showQuestion () {
+    nextQuestionElement.innerHTML = "Next Question";
     if (currentIndex < quizQuestions.length){
         let currentQuestion = quizQuestions[currentIndex];
         questionElement.innerText = currentQuestion.question;
@@ -106,16 +107,17 @@ function showQuestion () {
         answerC.innerHTML = currentQuestion.options[2];
         answerD.innerHTML = currentQuestion.options[3];
         correctAnswer = currentQuestion.correctAnswer; // Update correctAnswer variable 
-        resetMoneyOutputs()
+        resetMoneyOutputs();
     } else endGame();
 }
 
 
 // 20 lines of nextQustion function
 function nextQuestion() {
+    updateTotalMoney();
     currentIndex++;
     nextQuestionElement.style.visibility = 'hidden';
-    if (currentIndex < quizQuestions.length && totalMoney >= "0") {
+    if (currentIndex < quizQuestions.length) {
         showQuestion();
     } else {
         endGame();
@@ -127,15 +129,16 @@ function endGame () {
     if (totalMoney <= "0") {
         questionElement.innerHTML = "You lose! You have no money left.";
         nextQuestionElement.innerHTML = "Restart";
-        nextQuestionElement.removeEventListener("click", nextQuestion); // Remove previous event listener
         nextQuestionElement.addEventListener("click", restartGame); // Add event listener for restart
     }
 }
 
 function restartGame() {
     currentIndex = 0; // Reset currentIndex
+    totalMoney = "1,000,000"; // Reset total money
+    updateTotalMoney(); // Update total money display
     startGame(); // Restart the game
-
+    nextQuestionElement.removeEventListener("click", restartGame); // Add event listener for restart
 }
 
 
@@ -170,7 +173,7 @@ if (answerA.innerText === correctAnswer && moneyAValue > 0) {
         moneyD.innerText = "DROPPED!"; 
     }
         
-    updateTotalMoney();
+        updateTotalMoney();
 
         // Check if total money is zero after the answer is submitted and it's incorrect
         if (totalMoney <= 0) {
