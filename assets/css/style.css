@@ -34,17 +34,21 @@ h1:hover {
 }
 
 /* Music icon */
-i {
+.music-toggle {
     color: #f00f0a;
     text-shadow: -1px -1px 0 #f1f1f1, 1px -1px 0 #f1f1f1, -1px 1px 0 #f1f1f1, 1px 1px 0 #f1f1f1;
     transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    cursor: pointer;
 }
 
-/* Music icon hover */
-i:hover {
+.music-toggle:hover {
     color: #F1F1F1;
     text-shadow: -1px -1px 0 #f00f0a, 1px -1px 0 #f00f0a, -1px 1px 0 #f00f0a, 1px 1px 0 #f00f0a;
     transform: scale(1.5);
+}
+
+.toggle-off {
+    display: none;
 }
 
 /* Background Image */
@@ -108,6 +112,21 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+.money-buttons:hover { 
+    background-color: rgba(0,0,0,.75);
+    border: 4px solid #f00f0a;
+}
+
+.money-buttons span {
+    font-size: x-large;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.money-buttons i {
+    color: #f1f1f1;
 }
 
 .answer-buttons:hover {
@@ -116,14 +135,59 @@ p {
 }
 
 .money-minus {
+    width: 30px;
+    height: auto;
     border-radius: 50%;
-    background-color: #72787A;
+    background-image:
+    -webkit-radial-gradient(50% 0%, 8% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0)100%),
+    -webkit-radial-gradient(50% 100%, 12% 50%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0)100%),
+    -webkit-radial-gradient(0% 50%, 50% 7%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0)100%),
+    -webkit-radial-gradient(100% 50%, 50% 5%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0)100%),
+    -webkit-repeating-radial-gradient(50% 50%, 100% 100%, rgba(44, 0, 0, 0) 0%, rgba(44, 0, 0, 0) 3%, rgba(44, 0, 0, 0) 3.5%),
+    -webkit-repeating-radial-gradient(50% 50%, 100% 100%, rgba(255, 30, 30, 0) 0%, rgba(255, 30, 30, 0) 6%, rgba(255, 30, 30, 0.1) 7.5%),
+    -webkit-repeating-radial-gradient(50% 50%, 100% 100%, rgba(210, 25, 25, 0) 0%, rgba(210, 25, 25, 0) 1.2%, rgba(210, 25, 25, 0.2) 2.2%),
+    -webkit-radial-gradient(50% 50%, 200% 50%, rgb(130, 10, 10) 5%, rgb(120, 10, 10) 30%, rgb(170, 17, 17) 100%);
 }
 
 .money-plus {
     border-radius: 50%;
-    background-color: #72787A;
+    width: 30px;
+    height: auto;
+    border-radius: 50%;
+    background-image:
+    -webkit-radial-gradient(50% 0%, 8% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0)100%),
+    -webkit-radial-gradient(50% 100%, 12% 50%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0)100%),
+    -webkit-radial-gradient(0% 50%, 50% 7%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0)100%),
+    -webkit-radial-gradient(100% 50%, 50% 5%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0)100%),
+    -webkit-repeating-radial-gradient(50% 50%, 100% 100%, rgba(44, 0, 0, 0) 0%, rgba(44, 0, 0, 0) 3%, rgba(44, 0, 0, 0) 3.5%),
+    -webkit-repeating-radial-gradient(50% 50%, 100% 100%, rgba(255, 30, 30, 0) 0%, rgba(255, 30, 30, 0) 6%, rgba(255, 30, 30, 0.1) 7.5%),
+    -webkit-repeating-radial-gradient(50% 50%, 100% 100%, rgba(210, 25, 25, 0) 0%, rgba(210, 25, 25, 0) 1.2%, rgba(210, 25, 25, 0.2) 2.2%),
+    -webkit-radial-gradient(50% 50%, 200% 50%, rgb(130, 10, 10) 5%, rgb(120, 10, 10) 30%, rgb(170, 17, 17) 100%);
 }
+
+.buttons-section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#start-game, #submit-answer, #next-question, #instructions {
+    border: 4px solid #f1f1f1; 
+    background-color: rgba(0,0,0,.5);
+    color: #f1f1f1;
+    text-shadow: -1px -1px 0 #f00f0a, 1px -1px 0 #f00f0a, -1px 1px 0 #f00f0a, 1px 1px 0 #f00f0a;
+    padding: 10px; 
+    border-radius: 8px; 
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+#start-game:hover, #submit-answer:hover, #next-question:hover, #instructions:hover {
+    border: 4px solid #2ECA16;
+    background-color: rgba(0,0,0,.75);
+    color: #f1f1f1;
+    text-shadow: -1px -1px 0 #2ECA16, 1px -1px 0 #2ECA16, -1px 1px 0 #2ECA16, 1px 1px 0 #2ECA16;
+}
+
 
 /* Custom CSS Media Queries for smaller screens */
 @media (max-width: 768px) {

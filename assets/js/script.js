@@ -231,3 +231,25 @@ submitAnswerElement.addEventListener("click", function(){
 window.increment = increment;
 window.decrement = decrement;
 });
+
+// Music Icons Toggler
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const musicToggleOn = document.getElementById('music-toggle-on');
+    const musicToggleOff = document.getElementById('music-toggle-off');
+
+    musicToggleOn.addEventListener('click', () => {
+        musicToggleOn.style.display = 'none';
+        musicToggleOff.style.display = 'inline'; // or 'block' if it needs to be block-level
+    });
+
+    musicToggleOff.addEventListener('click', () => {
+        musicToggleOff.style.display = 'none';
+        musicToggleOn.style.display = 'inline'; // or 'block' if it needs to be block-level
+    });
+});
+
+// Numbers with correct commas
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}

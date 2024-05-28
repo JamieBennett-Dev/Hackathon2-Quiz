@@ -37,8 +37,9 @@
                 <div class="col-1 d-flex justify-content-end align-items-center">
                     <p class="d-none d-lg-block mb-0" id="music-on-off">Music On/Off</p>
                 </div>
-                <div class="col-lg-1 d-flex justify-content-start align-items-center h4 mb-0">
-                    <i class="fa-solid fa-volume-high" id="music-toggle"></i>
+                <div class="col-lg-1 d-flex justify-content-lg-start justify-content-center align-items-center h4 mb-0">
+                    <i class="fa-solid fa-volume-high music-toggle" id="music-toggle-on"></i>
+                    <i class="fa-solid fa-volume-xmark toggle-off music-toggle" id="music-toggle-off"></i>
                 </div>      
             </div>
 
@@ -54,62 +55,60 @@
             </div>
 
             <div class="row answers-section">
-                <div class="col-6 py-2">
+                <div class="col-6 py-2 px-0">
                     <div class="answer-buttons" id="btnA">Answer A</div> <!-- Answer A -->
                 </div>
                 <div class="col-2"></div>
                 <div class="col-4 money-buttons px-0 py-0 my-2">
-                    <button class="money-minus" onclick="decrement('moneyA')">-</button>
+                    <button class="money-minus" onclick="decrement('moneyA')"><i class="fa-solid fa-minus"></i></button>
                     <span class="money-output d-flex justify-content-center align-items-center" id="moneyA">£0</span>
-                    <button class="money-plus" onclick="increment('moneyA')">+</button>
+                    <button class="money-plus" onclick="increment('moneyA')"><i class="fa-solid fa-plus"></i></button>
                 </div>
-                <div class="col-6 py-2">
+                <div class="col-6 py-2 px-0">
                     <div class="answer-buttons" id="btnB">Answer B</div> <!-- Answer B -->
                 </div>
                 <div class="col-2"></div>
                 <div class="col-4 money-buttons px-0 py-0 my-2">
-                    <button class="money-minus" onclick="decrement('moneyB')">-</button>
+                    <button class="money-minus" onclick="decrement('moneyB')"><i class="fa-solid fa-minus"></i></button>
                     <span class="money-output d-flex justify-content-center align-items-center" id="moneyB">£0</span>
-                    <button class="money-plus" onclick="increment('moneyB')">+</button>
+                    <button class="money-plus" onclick="increment('moneyB')"><i class="fa-solid fa-plus"></i></button>
                 </div>
             </div>
             <div class="row answers-section">
-                <div class="col-6 py-2">
+                <div class="col-6 py-2 px-0">
                     <div class="answer-buttons" id="btnC">Answer C</div> <!-- Answer C -->
                 </div>
                 <div class="col-2"></div>
                 <div class="col-4 money-buttons px-0 py-0 my-2">
-                    <button class="money-minus" onclick="decrement('moneyC')">-</button>
+                    <button class="money-minus" onclick="decrement('moneyC')"><i class="fa-solid fa-minus"></i></button>
                     <span class="money-output d-flex justify-content-center align-items-center" id="moneyC">£0</span>
-                    <button class="money-plus" onclick="increment('moneyC')">+</button>
+                    <button class="money-plus" onclick="increment('moneyC')"><i class="fa-solid fa-plus"></i></button>
                 </div>
 
-                <div class="col-6 py-2">
+                <div class="col-6 py-2 px-0">
                     <div class="answer-buttons" id="btnD">Answer D</div> <!-- Answer D -->
                 </div>
                 <div class="col-2"></div>
                 <div class="col-4 money-buttons px-0 py-0 my-2">
-                    <button class="money-minus" onclick="decrement('moneyD')">-</button>
+                    <button class="money-minus" onclick="decrement('moneyD')"><i class="fa-solid fa-minus"></i></button>
                     <span class="money-output d-flex justify-content-center align-items-center" id="moneyD">£0</span>
-                    <button class="money-plus" onclick="increment('moneyD')">+</button>
+                    <button class="money-plus" onclick="increment('moneyD')"><i class="fa-solid fa-plus"></i></button>
                 </div>
             </div>
             <div class="row buttons-section">
-                <div class="col-4">
-                    <button type="button" class="btn btn-secondary" id="start-game">Start Game</button>
-                </div>
-                <div class="col-4">
-                    <button type="button" class="btn btn-secondary" id="submit-answer">Submit Answer</button>
-                </div>
-                <div class="col-4">
-                    <button type="button" class="btn btn-secondary" id="next-question">Next Question</button>
-                </div>
-            </div>
-            <div class="row instructions-section">
-                <div class="col-12 text-center">
+                <div class="col-md-3 col-12">
                     <button type="button" class="btn btn-secondary" id="instructions">Instructions</button>
                 </div>
-
+                <div class="col-md-3 col-12">
+                    <button type="button" class="btn btn-secondary" id="start-game">Start Game</button>
+                </div>
+                <div class="col-2"></div> <!-- Spacing -->
+                <div class="col-md-2 col-12">
+                    <button type="button" class="btn btn-secondary" id="submit-answer">Submit Answer</button>
+                </div>
+                <div class="col-md-2 col-12">
+                    <button type="button" class="btn btn-secondary" id="next-question">Next Question</button>
+                </div>
             </div>
 
         </div>
