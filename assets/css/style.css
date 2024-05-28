@@ -1,9 +1,40 @@
+/* General Styles*/ 
 body {
-    text-align: center;
-    margin-top: 30px;
-    margin: 0 10px;
-    background-color: #620404;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     color: #F1F1F1;
+    font-family: sans-serif;
+}
+
+/* Logo Image */
+#logo {
+    width: 400px;
+    height: auto;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    color: #F1F1F1;
+    text-shadow: -2px -2px 0 #f00f0a, 2px -2px 0 #f00f0a, -2px 2px 0 #f00f0a, 2px 2px 0 #f00f0a;
+}
+
+h1:hover {
+    transition: .3s ease-in-out;
+    color: #f00f0a;
+    text-shadow: -2px -2px 0 #f1f1f1, 2px -2px 0 #f1f1f1, -2px 2px 0 #f1f1f1, 2px 2px 0 #f1f1f1;
+}
+
+/* Background Image */
+.background-image {
+    background-image: url(../images/background-image.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
 }
 
 .music-button {
