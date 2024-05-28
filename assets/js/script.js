@@ -12,21 +12,6 @@ const submitAnswerElement = document.getElementById("submit-answer");
 const nextQuestionElement = document.getElementById("next-question");
 const instructionsElement = document.getElementById("instructions");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // 50 lines for question array and objects
 const quizQuestions = [
     // easy questions, 1-3
@@ -82,7 +67,9 @@ const quizQuestions = [
 
 // 20 lines startGame function
 
-
+function startGame() {
+    showQuestion();
+}
 
 
 
@@ -102,6 +89,10 @@ const quizQuestions = [
 
 // 20 lines for showQuestion function
 
+function showQuestion() {
+    const question = quizQuestions[0].question;
+    questionElement.innerHTML = `<h4>${question}</h4>`;
+}
 
 
 
@@ -119,8 +110,7 @@ const quizQuestions = [
 
 
 
-
-// 20 lines of nextQustion function
+// 20 lines of nextQuestion function
 
 
 
@@ -222,6 +212,8 @@ const quizQuestions = [
 
 // addEventListeners 
 
-
+startGameElement.addEventListener("click", function() {
+    startGame();
+})
 
 
