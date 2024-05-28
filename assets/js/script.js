@@ -73,26 +73,40 @@ const quizQuestions = [
     }
 ];
 
-// 20 lines startGame function
+let currentIndex = 0;
+let correctAnswer = ''; // Initialize correctAnswer variable
+let totalMoney = "1,000,000";
 
+
+
+function updateTotalMoney() {
+    currentMoneyElement.innerHTML = `£${totalMoney.toLocaleString()}`;
+}
+
+
+// 20 lines startGame function
 function startGame () {
+    startGameElement.style.visibility = 'hidden';
+    totalMoney = 1000000; // Reset total money
+    updateTotalMoney()
     showQuestion();
 }
+
 
 // 20 lines for showQuestion function
 function showQuestion () {
     if (currentIndex < quizQuestions.length){
-    let currentQuestion = quizQuestions[currentIndex];
-    questionElement.innerText = currentQuestion.question;
-    // Display current answers
-    answerA.innerHTML = currentQuestion.options[0];
-    answerB.innerHTML = currentQuestion.options[1];
-    answerC.innerHTML = currentQuestion.options[2];
-    answerD.innerHTML = currentQuestion.options[3];
+        let currentQuestion = quizQuestions[currentIndex];
+        questionElement.innerText = currentQuestion.question;
+        // Display current answers
+        answerA.innerHTML = currentQuestion.options[0];
+        answerB.innerHTML = currentQuestion.options[1];
+        answerC.innerHTML = currentQuestion.options[2];
+        answerD.innerHTML = currentQuestion.options[3];
+        correctAnswer = currentQuestion.correctAnswer; // Update correctAnswer variable 
+        resetMoneyOutputs()
     } else endGame();
 }
-
-let currentIndex = 0;
 
 
 // 20 lines of nextQustion function
@@ -113,71 +127,75 @@ function endGame() {
     answerB.innerHTML = "";
     answerC.innerHTML = "";
     answerD.innerHTML = "";
-    nextQuestionElement.style.visibility = 'hidden';
+    startGameElement.style.visibility = 'visible';
+    questionIndex = 0;
+    showQuestion()
 }
 
 
-
-
-
 // 20 lines submitAnswer function
+function submitAnswer() {
+    let moneyAValue = parseInt(moneyA.innerText) || 0;
+    let moneyBValue = parseInt(moneyB.innerText) || 0;
+    let moneyCValue = parseInt(moneyC.innerText) || 0;
+    let moneyDValue = parseInt(moneyD.innerText) || 0;
+
+// If the correct answer is clicked, return the money to total
+if (answerA.innerText === correctAnswer && moneyAValue > 0) {
+    totalMoney += moneyAValue;
+} else {
+    moneyA.innerText = "0"; // Reset the money for the wrong answer to 0
+}
+if (answerB.innerText === correctAnswer && moneyBValue > 0) {
+    totalMoney += moneyBValue;
+} else {
+    moneyB.innerText = "0"; 
+}
+if (answerC.innerText === correctAnswer && moneyCValue > 0) {
+    totalMoney += moneyCValue;
+} else {
+    moneyC.innerText = "0"; 
+}
+if (answerD.innerText === correctAnswer && moneyDValue > 0) {
+    totalMoney += moneyDValue;
+} else {
+    moneyD.innerText = "0"; 
+}
+    correctAnswer.innerHTML = totalMoney;
+    updateTotalMoney();
+};
+
+// 20 lines increment and decrement functions
+
+function increment(id) {
+    let element = document.getElementById(id);
+    let currentValue = parseInt(element.innerText) || 0;
+    if (totalMoney >= 50000) {
+        currentValue += 50000;
+        totalMoney -= 50000;
+        element.innerText = currentValue;
+        updateTotalMoney();
+    }
+}
+
+function decrement(id) {
+    let element = document.getElementById(id);
+    let currentValue = parseInt(element.innerText) || 0;
+    if (currentValue >= 50000) {
+        currentValue -= 50000;
+        totalMoney += 50000;
+        element.innerText = currentValue;
+        updateTotalMoney();
+    }
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 20 lines for increment function
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 20 lines of decrement function
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function resetMoneyOutputs() {
+    moneyA.innerText = "0";
+    moneyB.innerText = "0";
+    moneyC.innerText = "0";
+    moneyD.innerText = "0";
+}
 
 
 // addEventListeners 
@@ -190,5 +208,11 @@ nextQuestionElement.addEventListener("click", function(){
     nextQuestion()
 })
 
+submitAnswerElement.addEventListener("click", function(){
+    submitAnswer()
+})
 
+
+window.increment = increment;
+window.decrement = decrement;
 });
