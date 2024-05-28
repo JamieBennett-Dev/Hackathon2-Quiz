@@ -31,9 +31,13 @@
                     <img src="assets/images/Million-pound-drop-removebg-preview.png" alt="Logo" id="logo"> <!-- Logo -->
                 </div>
                 <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                    <h1 class="display-5 fw-bolder d-none d-lg-block">The Million Pound Drop</h1> <!-- Main Title -->
+                    <h1 class="display-5 fw-bolder d-none d-lg-block mb-0">The Million Pound Drop</h1> <!-- Main Title -->
                 </div>
-                <div class="col-lg-3 d-flex justify-content-center align-items-center h4">
+                <div class="col-1"></div> <!-- Gap -->
+                <div class="col-1 d-flex justify-content-end align-items-center">
+                    <p class="d-none d-lg-block mb-0" id="music-on-off">Music On/Off</p>
+                </div>
+                <div class="col-lg-1 d-flex justify-content-start align-items-center h4 mb-0">
                     <i class="fa-solid fa-volume-high" id="music-toggle"></i>
                 </div>      
             </div>
@@ -53,17 +57,19 @@
                 <div class="col-6 py-2">
                     <div class="answer-buttons" id="btnA">Answer A</div> <!-- Answer A -->
                 </div>
-                <div class="col-6 py-2">
+                <div class="col-2"></div>
+                <div class="col-4 money-buttons px-0 py-0 my-2">
                     <button class="money-minus" onclick="decrement('moneyA')">-</button>
-                    <span class="money-output" id="moneyA">£ 0</span>
+                    <span class="money-output d-flex justify-content-center align-items-center" id="moneyA">£0</span>
                     <button class="money-plus" onclick="increment('moneyA')">+</button>
                 </div>
                 <div class="col-6 py-2">
                     <div class="answer-buttons" id="btnB">Answer B</div> <!-- Answer B -->
                 </div>
-                <div class="col-6 py-2">
+                <div class="col-2"></div>
+                <div class="col-4 money-buttons px-0 py-0 my-2">
                     <button class="money-minus" onclick="decrement('moneyB')">-</button>
-                    <span class="money-output" id="moneyB">£ 0</span>
+                    <span class="money-output d-flex justify-content-center align-items-center" id="moneyB">£0</span>
                     <button class="money-plus" onclick="increment('moneyB')">+</button>
                 </div>
             </div>
@@ -71,18 +77,20 @@
                 <div class="col-6 py-2">
                     <div class="answer-buttons" id="btnC">Answer C</div> <!-- Answer C -->
                 </div>
-                <div class="col-6 py-2">
+                <div class="col-2"></div>
+                <div class="col-4 money-buttons px-0 py-0 my-2">
                     <button class="money-minus" onclick="decrement('moneyC')">-</button>
-                    <span class="money-output" id="moneyC">£ 0</span>
+                    <span class="money-output d-flex justify-content-center align-items-center" id="moneyC">£0</span>
                     <button class="money-plus" onclick="increment('moneyC')">+</button>
                 </div>
 
                 <div class="col-6 py-2">
                     <div class="answer-buttons" id="btnD">Answer D</div> <!-- Answer D -->
                 </div>
-                <div class="col-6 py-2">
+                <div class="col-2"></div>
+                <div class="col-4 money-buttons px-0 py-0 my-2">
                     <button class="money-minus" onclick="decrement('moneyD')">-</button>
-                    <span class="money-output" id="moneyD">£ 700000</span>
+                    <span class="money-output d-flex justify-content-center align-items-center" id="moneyD">£0</span>
                     <button class="money-plus" onclick="increment('moneyD')">+</button>
                 </div>
             </div>
