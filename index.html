@@ -18,12 +18,12 @@
         <div class="row question-section">
             <div class="col-7 question-box"><h4 id="question-box">Question goes here</h4></div>
             <div class="col-1"></div>
-            <div class="col-4 total-money-box"><p>Total Money: £</p></div>
+            <div class="col-4 total-money-box" id="current-money"><p>Total Money: £</p></div>
         </div>
 
         <div class="row answers-section">
             <div class="col-12 col-md-2">
-                <div class="answer-buttons">Answer A</div>
+                <div class="answer-buttons" id="btnA">Answer A</div>
             </div>
             <div class="col-12 col-md-4">
                 <button class="money-minus" onclick="decrement('moneyA')">-</button>
@@ -31,7 +31,7 @@
                 <button class="money-plus" onclick="increment('moneyA')">+</button>
             </div>
             <div class="col-12 col-md-2">
-                <div class="answer-buttons">Answer B</div>
+                <div class="answer-buttons" id="btnB">Answer B</div>
             </div>
             <div class="col-12 col-md-4">
                 <button class="money-minus" onclick="decrement('moneyB')">-</button>
@@ -41,7 +41,7 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-2">
-                <div class="answer-buttons">Answer C</div>
+                <div class="answer-buttons" id="btnC">Answer C</div>
             </div>
             <div class="col-12 col-md-4">
                 <button class="money-minus" onclick="decrement('moneyC')">-</button>
@@ -50,7 +50,7 @@
             </div>
 
             <div class="col-12 col-md-2">
-                <div class="answer-buttons">Answer D</div>
+                <div class="answer-buttons" id="btnD">Answer D</div>
             </div>
             <div class="col-12 col-md-4">
                 <button class="money-minus" onclick="decrement('moneyD')">-</button>
@@ -71,10 +71,10 @@
         </div>
         <div class="row instructions-section">
             <div class="col-8 text-center">
-                <button type="button" class="btn btn-secondary">Instructions</button>
+                <button type="button" class="btn btn-secondary" id="instructions">Instructions</button>
             </div>
                 <div class="col-2">
-                        <button type="button" class="btn btn-info music-button">Music on/off</button>
+                        <button type="button" class="btn btn-info music-button" id="volume-toggle">Music on/off</button>
                 </div>
             
         </div>
