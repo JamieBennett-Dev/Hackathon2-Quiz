@@ -1,19 +1,64 @@
-.buttons-section {
-    margin-top: 50px;
-}
-
-.answers-section {
-    margin-top: 50px;
-}
-
-.question-section {
-    margin-top: 50px;
-}
-
-.instructions-section {
+body {
+    text-align: center;
     margin-top: 30px;
+    margin: 0 10px;
+    background-color: #F00A0A;
+    color: #F1F1F1;
 }
 
 .music-button {
     margin-right: 20px;
+    margin-top: 10px;
+    border-radius: 20%;
+    padding: 0;
 }
+
+.question-section {
+    margin-top: 20px;
+}
+
+.question-box {
+    border: 5px solid #C0E8F9;
+    border-radius: 15%;
+    background-color: #F1F1F1;
+    color: black;
+    max-height: 80px;
+}
+
+.total-money-box {
+    border: 5px solid #C0E8F9;
+    border-radius: 15%;
+    background-color: #F1F1F1;
+    color: black;
+    max-height: 80px;
+
+}
+
+.answers-section {
+    margin-top: 20px;
+}
+
+.answer-buttons {
+    border: 2px solid #C0E8F9;
+    margin: 10px;
+    min-width: 80px;
+}
+
+.money-minus {
+    border-radius: 50%;
+    background-color: #72787A;
+}
+
+.money-plus {
+    border-radius: 50%;
+    background-color: #72787A;
+}
+
+.buttons-section {
+    margin-top: 20px;
+}
+
+.instructions-section {
+    margin-top: 20px;
+}
+
