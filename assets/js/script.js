@@ -166,7 +166,6 @@ if (answerD.innerText === correctAnswer && moneyDValue > 0) {
 };
 
 // 20 lines increment and decrement functions
-
 function increment(id) {
     let element = document.getElementById(id);
     let currentValue = parseInt(element.innerText) || 0;
