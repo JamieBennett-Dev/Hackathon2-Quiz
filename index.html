@@ -13,26 +13,26 @@
             <div class="col-9">
                 <h1>The Million Pound Drop</h1>
             </div>
-            <div class="col-2 music-button">
+            <div class="col-2 music-button" id="volume-toggle">
                 <button type="button" class="btn btn-info">Info</button>
             </div>
         </div>
         <div class="row question-section">
-            <div class="col-8">Question goes here</div>
-            <div class="col-4">Total Money: £</div>
+            <div class="col-8" id="question-box">Question goes here</div>
+            <div class="col-4" id="current-money">Total Money: £</div>
         </div>
 
         <div class="row answers-section">
-            <div class="col-8 col-md-4">
-                <div>Answer A</div>
+            <div class="col-8 col-md-4" >
+                <div id="btnA">Answer A</div>
             </div>
             <div class="col-4 col-md-2">
                 <button class="money-minus" onclick="decrement('moneyA')">-</button>
                 <span class="money-output" id="moneyA">£ 0</span>
                 <button class="money-plus" onclick="increment('moneyA')">+</button>
             </div>
-            <div class="col-8 col-md-4">
-                <div>Answer B</div>
+            <div class="col-8 col-md-4" >
+                <div id="btnB">Answer B</div>
             </div>
             <div class="col-4 col-md-2">
                 <button class="money-minus" onclick="decrement('moneyB')">-</button>
@@ -41,8 +41,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-8 col-md-4">
-                <div>Answer C</div>
+            <div class="col-8 col-md-4" >
+                <div id="btnC">Answer C</div>
             </div>
             <div class="col-4 col-md-2">
                 <button class="money-minus" onclick="decrement('moneyC')">-</button>
@@ -50,8 +50,8 @@
                 <button class="money-plus" onclick="increment('moneyC')">+</button>
             </div>
 
-            <div class="col-8 col-md-4">
-                <div>Answer D</div>
+            <div class="col-8 col-md-4" >
+                <div id="btnD">Answer D</div>
             </div>
             <div class="col-4 col-md-2">
                 <button class="money-minus" onclick="decrement('moneyD')">-</button>
@@ -61,18 +61,18 @@
         </div>
         <div class="row buttons-section">
             <div class="col-4">
-                <button type="button" class="btn btn-secondary">Start Game</button>
+                <button type="button" class="btn btn-secondary" id="start-game">Start Game</button>
             </div>
             <div class="col-4">
-                <button type="button" class="btn btn-secondary">Submit Answer</button>
+                <button type="button" class="btn btn-secondary" id="submit-answer">Submit Answer</button>
             </div>
             <div class="col-4">
-                <button type="button" class="btn btn-secondary">Next Question</button>
+                <button type="button" class="btn btn-secondary" id="next-question">Next Question</button>
             </div>
         </div>
         <div class="row instructions-section">
             <div class="col-12 text-center">
-                <button type="button" class="btn btn-secondary">Instructions</button>
+                <button type="button" class="btn btn-secondary" id="instructions">Instructions</button>
             </div>
         </div>
         

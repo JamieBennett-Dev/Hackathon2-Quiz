@@ -1,5 +1,19 @@
 // 15 lines for getElement code
 
+const questionElement = document.getElementById("question-box");
+const currentMoneyElement = document.getElementById("current-money");
+const volumeToggleElement = document.getElementById("volume-toggle");
+const answerA = document.getElementById('btnA');
+const answerB = document.getElementById('btnB');
+const answerC = document.getElementById('btnC');
+const answerD = document.getElementById('btnD');
+const startGameElement = document.getElementById("start-game");
+const submitAnswerElement = document.getElementById("submit-answer");
+const nextQuestionElement = document.getElementById("next-question");
+const instructionsElement = document.getElementById("instructions");
+
+
+
 
 
 
