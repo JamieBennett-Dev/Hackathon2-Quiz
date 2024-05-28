@@ -78,8 +78,8 @@ function startGame () {
 
 // 20 lines for showQuestion function
 function showQuestion () {
-    let currentQuestion = quizQuestions[0].question;
-    questionElement.innerText = currentQuestion;
+    let currentQuestion = quizQuestions[0];
+    questionElement.innerText = currentQuestion.question;
     // Display current answers
     answerA.innerHTML = currentQuestion.options[0];
     answerB.innerHTML = currentQuestion.options[1];
