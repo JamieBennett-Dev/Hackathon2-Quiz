@@ -11,8 +11,10 @@ body {
 #logo {
     width: 400px;
     height: auto;
+    cursor: pointer;
 }
 
+/* Title */
 h1 {
     display: flex;
     justify-content: center;
@@ -20,12 +22,29 @@ h1 {
     font-family: 'Orbitron', sans-serif;
     color: #F1F1F1;
     text-shadow: -2px -2px 0 #f00f0a, 2px -2px 0 #f00f0a, -2px 2px 0 #f00f0a, 2px 2px 0 #f00f0a;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    cursor: pointer;
 }
 
+/* Title hover */
 h1:hover {
-    transition: .3s ease-in-out;
     color: #f00f0a;
     text-shadow: -2px -2px 0 #f1f1f1, 2px -2px 0 #f1f1f1, -2px 2px 0 #f1f1f1, 2px 2px 0 #f1f1f1;
+    transform: scale(1.2);
+}
+
+/* Music icon */
+i {
+    color: #f00f0a;
+    text-shadow: -1px -1px 0 #f1f1f1, 1px -1px 0 #f1f1f1, -1px 1px 0 #f1f1f1, 1px 1px 0 #f1f1f1;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Music icon hover */
+i:hover {
+    color: #F1F1F1;
+    text-shadow: -1px -1px 0 #f00f0a, 1px -1px 0 #f00f0a, -1px 1px 0 #f00f0a, 1px 1px 0 #f00f0a;
+    transform: scale(1.5);
 }
 
 /* Background Image */
@@ -37,42 +56,41 @@ h1:hover {
     height: 100%;
 }
 
-.music-button {
-    margin-right: 20px;
-    margin-top: 10px;
-    border-radius: 20%;
-    padding: 0;
+/* Question and Money box */
+.question-box, .total-money-box {
+    border: 4px solid #f1f1f1; 
+    background-color: #f00f0a;
+    color: #f1f1f1;
+    padding: 20px; 
+    border-radius: 8px; 
+    font-family: 'Orbitron', sans-serif;
 }
 
+/* Quesiton box font-size */
+h4 {
+    font-size: xx-large;
+}
+
+/* Money box font-size */
+p {
+    font-size: x-large;
+}
+
+/* Margin bottom to question section */
 .question-section {
-    margin-top: 20px;
-}
-
-.question-box {
-    border: 5px solid #C0E8F9;
-    border-radius: 15%;
-    background-color: #F1F1F1;
-    color: black;
-    max-height: 80px;
-}
-
-.total-money-box {
-    border: 5px solid #C0E8F9;
-    border-radius: 15%;
-    background-color: #F1F1F1;
-    color: black;
-    max-height: 80px;
-
-}
-
-.answers-section {
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .answer-buttons {
-    border: 2px solid #C0E8F9;
-    margin: 10px;
-    min-width: 80px;
+    border: 4px solid #f1f1f1; 
+    background-color: rgba(0,0,0,.5);
+    color: #f1f1f1;
+    text-shadow: -2px -2px 0 #f00f0a, 2px -2px 0 #f00f0a, -2px 2px 0 #f00f0a, 2px 2px 0 #f00f0a;
+    padding: 10px;
+    border-radius: 8px; 
+    font-family: 'Orbitron', sans-serif;
+    font-size: x-large;
+    font-weight: bolder;
 }
 
 .money-minus {
@@ -85,11 +103,23 @@ h1:hover {
     background-color: #72787A;
 }
 
-.buttons-section {
-    margin-top: 20px;
+/* Custom CSS Media Queries for smaller screens */
+@media (max-width: 768px) {
+    .question-box h4 {
+        font-size: 1.25rem; 
+    }
+    .total-money-box p {
+        font-size: 1rem; 
+    }
 }
 
-.instructions-section {
-    margin-top: 20px;
+/* Additional breakpoint example for even smaller screens */
+@media (max-width: 576px) {
+    .question-box h4 {
+        font-size: 1rem; 
+    }
+    .total-money-box p {
+        font-size: 0.875rem; 
+    }
 }
 
