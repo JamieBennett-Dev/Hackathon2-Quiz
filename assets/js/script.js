@@ -119,8 +119,6 @@ function showQuestion () {
 
 
 
-
-
 // 20 lines endGame function
 
 
