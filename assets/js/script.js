@@ -144,22 +144,22 @@ function submitAnswer() {
 if (answerA.innerText === correctAnswer && moneyAValue > 0) {
     totalMoney += moneyAValue;
 } else {
-    moneyA.innerText = "0"; // Reset the money for the wrong answer to 0
+    moneyA.innerText = "DROPPED!"; // Reset the money for the wrong answer to 0
 }
 if (answerB.innerText === correctAnswer && moneyBValue > 0) {
     totalMoney += moneyBValue;
 } else {
-    moneyB.innerText = "0"; 
+    moneyB.innerText = "DROPPED!"; 
 }
 if (answerC.innerText === correctAnswer && moneyCValue > 0) {
     totalMoney += moneyCValue;
 } else {
-    moneyC.innerText = "0"; 
+    moneyC.innerText = "DROPPED!"; 
 }
 if (answerD.innerText === correctAnswer && moneyDValue > 0) {
     totalMoney += moneyDValue;
 } else {
-    moneyD.innerText = "0"; 
+    moneyD.innerText = "DROPPED!"; 
 }
     correctAnswer.innerHTML = totalMoney;
     updateTotalMoney();
