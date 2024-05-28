@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', () => {
 // 15 lines for getElement code
 
 const questionElement = document.getElementById("question-box");
@@ -14,26 +15,13 @@ const instructionsElement = document.getElementById("instructions");
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // 50 lines for question array and objects
 const quizQuestions = [
     // easy questions, 1-3
     {
         question: "What is the name of the wizarding school that Harry Potter attends?",
         options: ["Code Institute: School of Magical Programming", "Hogwarts School of Witchcraft and Wizardry", "Merlin's Academy", "Salem School of Magic"],
-        correctAnswer: "Hogwarts School of Witchcraft and Wizardry" 
+        correctAnswer: "Hogwarts School of Witchcraft and Wizardry"
     },
     {
         question: "Who wrote 'Romeo and Juliet'?",
@@ -82,29 +70,23 @@ const quizQuestions = [
 
 // 20 lines startGame function
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function startGame () {
+    showQuestion()
+}
 
 
 
 // 20 lines for showQuestion function
+function showQuestion () {
+    let currentQuestion = quizQuestions[0].question;
+    questionElement.innerText = currentQuestion;
+    // Display current answers
+    answerA.innerHTML = currentQuestion.options[0];
+    answerB.innerHTML = currentQuestion.options[1];
+    answerC.innerHTML = currentQuestion.options[2];
+    answerD.innerHTML = currentQuestion.options[3];
 
-
-
-
+}
 
 
 
@@ -222,6 +204,8 @@ const quizQuestions = [
 
 // addEventListeners 
 
+startGameElement.addEventListener("click", function(){
+    startGame();
+})
 
-
-
+});
