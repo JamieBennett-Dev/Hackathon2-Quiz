@@ -112,7 +112,7 @@ function showQuestion () {
 // 20 lines of nextQustion function
 function nextQuestion() {
     currentIndex++;
-    if (currentIndex < quizQuestions.length) {
+    if (currentIndex < quizQuestions.length && totalMoney >= "0") {
         showQuestion();
     } else {
         endGame();
@@ -121,15 +121,11 @@ function nextQuestion() {
 
 
 // 20 lines endGame function
-function endGame() {
-    questionElement.innerText = "Quiz finished! Thank you for playing.";
-    answerA.innerHTML = "";
-    answerB.innerHTML = "";
-    answerC.innerHTML = "";
-    answerD.innerHTML = "";
-    startGameElement.style.visibility = 'visible';
-    questionIndex = 0;
-    showQuestion()
+function endGame () {
+    if (totalMoney <= "0") {
+        questionElement.innerHTML = "You lose! You have no moneyt left.";
+        nextQuestionElement.innerHTML = "Restart";
+    }
 }
 
 
@@ -143,35 +139,40 @@ function submitAnswer() {
 // If the correct answer is clicked, return the money to total
 if (answerA.innerText === correctAnswer && moneyAValue > 0) {
     totalMoney += moneyAValue;
-} else {
-    moneyA.innerText = "DROPPED!"; // Reset the money for the wrong answer to 0
-}
-if (answerB.innerText === correctAnswer && moneyBValue > 0) {
-    totalMoney += moneyBValue;
-} else {
-    moneyB.innerText = "DROPPED!"; 
-}
-if (answerC.innerText === correctAnswer && moneyCValue > 0) {
-    totalMoney += moneyCValue;
-} else {
-    moneyC.innerText = "DROPPED!"; 
-}
-if (answerD.innerText === correctAnswer && moneyDValue > 0) {
-    totalMoney += moneyDValue;
-} else {
-    moneyD.innerText = "DROPPED!"; 
-}
-    correctAnswer.innerHTML = totalMoney;
+    } else {
+        moneyA.innerText = "DROPPED!"; // Reset the money for the wrong answer to 0
+    }
+    if (answerB.innerText === correctAnswer && moneyBValue > 0) {
+        totalMoney += moneyBValue;
+    } else {
+        moneyB.innerText = "DROPPED!"; 
+    }
+    if (answerC.innerText === correctAnswer && moneyCValue > 0) {
+        totalMoney += moneyCValue;
+    } else {
+        moneyC.innerText = "DROPPED!"; 
+    }
+    if (answerD.innerText === correctAnswer && moneyDValue > 0) {
+        totalMoney += moneyDValue;
+    } else {
+        moneyD.innerText = "DROPPED!"; 
+    }
+        
     updateTotalMoney();
+
+        // Check if total money is zero after the answer is submitted and it's incorrect
+        if (totalMoney <= 0) {
+            endGame();
+        }
 };
 
 // 20 lines increment and decrement functions
 function increment(id) {
     let element = document.getElementById(id);
     let currentValue = parseInt(element.innerText) || 0;
-    if (totalMoney >= 50000) {
-        currentValue += 50000;
-        totalMoney -= 50000;
+    if (totalMoney >= 100000) {
+        currentValue += 100000;
+        totalMoney -= 100000;
         element.innerText = currentValue;
         updateTotalMoney();
     }
@@ -180,9 +181,9 @@ function increment(id) {
 function decrement(id) {
     let element = document.getElementById(id);
     let currentValue = parseInt(element.innerText) || 0;
-    if (currentValue >= 50000) {
-        currentValue -= 50000;
-        totalMoney += 50000;
+    if (currentValue >= 100000) {
+        currentValue -= 100000;
+        totalMoney += 100000;
         element.innerText = currentValue;
         updateTotalMoney();
     }
