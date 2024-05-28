@@ -44,6 +44,11 @@ const quizQuestions = [
         options: ["Apple", "Microsoft", "Google", "IBM"],
         correctAnswer: "Microsoft"
     },
+    {
+        question: "Which is the best Premier League team?",
+        options: ["Aaaaaaaaaarsenal", "Shity Leeds", "Tottenshit", "Man Idiot"],
+        correctAnswer: "Aaaaaaaaaarsenal"
+    },
     // hard questions, 7-9
     {
         question: "In which country did the pineapple originate?",
@@ -71,72 +76,45 @@ const quizQuestions = [
 // 20 lines startGame function
 
 function startGame () {
-    showQuestion()
+    showQuestion();
 }
-
-
 
 // 20 lines for showQuestion function
 function showQuestion () {
-    let currentQuestion = quizQuestions[0].question;
-    questionElement.innerText = currentQuestion;
+    if (currentIndex < quizQuestions.length){
+    let currentQuestion = quizQuestions[currentIndex];
+    questionElement.innerText = currentQuestion.question;
     // Display current answers
     answerA.innerHTML = currentQuestion.options[0];
     answerB.innerHTML = currentQuestion.options[1];
     answerC.innerHTML = currentQuestion.options[2];
     answerD.innerHTML = currentQuestion.options[3];
-
+    } else endGame();
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+let currentIndex = 0;
 
 
 // 20 lines of nextQustion function
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function nextQuestion() {
+    currentIndex++;
+    if (currentIndex < quizQuestions.length) {
+        showQuestion();
+    } else {
+        endGame();
+    }
+}
 
 
 // 20 lines endGame function
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function endGame() {
+    questionElement.innerText = "Quiz finished! Thank you for playing.";
+    answerA.innerHTML = "";
+    answerB.innerHTML = "";
+    answerC.innerHTML = "";
+    answerD.innerHTML = "";
+    nextQuestionElement.style.visibility = 'hidden';
+}
 
 
 
@@ -207,5 +185,10 @@ function showQuestion () {
 startGameElement.addEventListener("click", function(){
     startGame();
 })
+
+nextQuestionElement.addEventListener("click", function(){
+    nextQuestion()
+})
+
 
 });
