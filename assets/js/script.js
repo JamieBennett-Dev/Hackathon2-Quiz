@@ -80,16 +80,18 @@ let totalMoney = "1,000,000";
 
 
 function updateTotalMoney() {
-    currentMoneyElement.innerHTML = `£${totalMoney.toLocaleString()}`;
+    currentMoneyElement.innerHTML = `Total money: £${totalMoney.toLocaleString()}`;
 }
 
 
 // 20 lines startGame function
 function startGame () {
     startGameElement.style.visibility = 'hidden';
+    nextQuestionElement.style.visibility = 'hidden';
     totalMoney = 1000000; // Reset total money
+    currentIndex = 0;
     updateTotalMoney()
-    showQuestion();
+    showQuestion();    
 }
 
 
@@ -112,6 +114,7 @@ function showQuestion () {
 // 20 lines of nextQustion function
 function nextQuestion() {
     currentIndex++;
+    nextQuestionElement.style.visibility = 'hidden';
     if (currentIndex < quizQuestions.length && totalMoney >= "0") {
         showQuestion();
     } else {
@@ -119,13 +122,20 @@ function nextQuestion() {
     }
 }
 
-
 // 20 lines endGame function
 function endGame () {
     if (totalMoney <= "0") {
-        questionElement.innerHTML = "You lose! You have no moneyt left.";
+        questionElement.innerHTML = "You lose! You have no money left.";
         nextQuestionElement.innerHTML = "Restart";
+        nextQuestionElement.removeEventListener("click", nextQuestion); // Remove previous event listener
+        nextQuestionElement.addEventListener("click", restartGame); // Add event listener for restart
     }
+}
+
+function restartGame() {
+    currentIndex = 0; // Reset currentIndex
+    startGame(); // Restart the game
+
 }
 
 
@@ -135,6 +145,8 @@ function submitAnswer() {
     let moneyBValue = parseInt(moneyB.innerText) || 0;
     let moneyCValue = parseInt(moneyC.innerText) || 0;
     let moneyDValue = parseInt(moneyD.innerText) || 0;
+    nextQuestionElement.style.visibility = 'visible';
+
 
 // If the correct answer is clicked, return the money to total
 if (answerA.innerText === correctAnswer && moneyAValue > 0) {
