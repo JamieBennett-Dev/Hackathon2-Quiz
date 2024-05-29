@@ -225,11 +225,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 nextQuestionElement.addEventListener("click", function(){
-    nextQuestion()
+    nextQuestion();
 })
 
 submitAnswerElement.addEventListener("click", function(){
-    submitAnswer()
+    submitAnswer();
+
 })
 
 // Expose increment and decrement functions to the global scope
