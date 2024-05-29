@@ -223,7 +223,7 @@ function resetMoneyOutputs() {
 }
 
 function startTimer() {
-    timeLeft = 8; // Set the timer to 30 seconds for each question
+    timeLeft = 30; // Set the timer to 30 seconds for each question
     timeLeftElement.innerText = timeLeft; // Display the initial time
     clearInterval(timer); // Clear any existing timer to avoid multiple intervals running simultaneously
     timer = setInterval(() => {
