@@ -12,6 +12,7 @@ const startGameElement = document.getElementById("start-game");
 const submitAnswerElement = document.getElementById("submit-answer");
 const nextQuestionElement = document.getElementById("next-question");
 const instructionsElement = document.getElementById("instructions");
+const timeLeftElement = document.getElementById("time-left");
 
 
 
@@ -108,6 +109,7 @@ function showQuestion () {
         answerD.innerHTML = currentQuestion.options[3];
         correctAnswer = currentQuestion.correctAnswer; // Update correctAnswer variable 
         resetMoneyOutputs();
+        startTimer();
     } else endGame();
 }
 
@@ -144,6 +146,7 @@ function restartGame() {
 
 // 20 lines submitAnswer function
 function submitAnswer() {
+    clearInterval(timer); // Stop the timer when answer is submitted
     let moneyAValue = parseInt(moneyA.innerText) || 0;
     let moneyBValue = parseInt(moneyB.innerText) || 0;
     let moneyCValue = parseInt(moneyC.innerText) || 0;
@@ -212,6 +215,20 @@ function resetMoneyOutputs() {
     moneyD.innerText = "0";
 }
 
+function startTimer() {
+    timeLeft = 30; // Set the timer to 30 seconds for each question
+    timeLeftElement.innerText = timeLeft; // Display the initial time
+    clearInterval(timer); // Clear any existing timer to avoid multiple intervals running simultaneously
+    timer = setInterval(() => {
+        timeLeft--;
+        timeLeftElement.innerText = timeLeft;
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            // Handle the case when the time is up (e.g., automatically move to the next question)
+            nextQuestionElement.style.visibility = 'visible';
+        }
+    }, 1000);
+}
 
 // addEventListeners 
 
