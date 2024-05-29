@@ -237,5 +237,7 @@ p {
 }
 
 #timer {
-    color: black;
+    color: fff;
+    margin-top: 30px;
+    font-size: 4rem;
 }
