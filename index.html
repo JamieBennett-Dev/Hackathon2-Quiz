@@ -1,89 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+    </style>
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/6e20b8d34b.js" crossorigin="anonymous"></script>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon/money-fav.png" type="icon">
+    <!-- BootStrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Title -->
     <title>The Million Pound Drop</title>
 </head>
+
 <body>
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-12">
-                <h2>The Million Pound Drop</h2>
-            </div>
 
-        </div>
-        <div class="row question-section">
-            <div class="col-7 question-box"><h4>Question goes here</h4></div>
-            <div class="col-1"></div>
-            <div class="col-4 total-money-box"><p>Total Money: £</p></div>
-        </div>
-
-        <div class="row answers-section">
-            <div class="col-12 col-md-2">
-                <div class="answer-buttons">Answer A</div>
-            </div>
-            <div class="col-12 col-md-4">
-                <button class="money-minus" onclick="decrement('moneyA')">-</button>
-                <span class="money-output" id="moneyA">£ 0</span>
-                <button class="money-plus" onclick="increment('moneyA')">+</button>
-            </div>
-            <div class="col-12 col-md-2">
-                <div class="answer-buttons">Answer B</div>
-            </div>
-            <div class="col-12 col-md-4">
-                <button class="money-minus" onclick="decrement('moneyB')">-</button>
-                <span class="money-output" id="moneyB">£ 0</span>
-                <button class="money-plus" onclick="increment('moneyB')">+</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-2">
-                <div class="answer-buttons">Answer C</div>
-            </div>
-            <div class="col-12 col-md-4">
-                <button class="money-minus" onclick="decrement('moneyC')">-</button>
-                <span class="money-output" id="moneyC">£ 0</span>
-                <button class="money-plus" onclick="increment('moneyC')">+</button>
-            </div>
-
-            <div class="col-12 col-md-2">
-                <div class="answer-buttons">Answer D</div>
-            </div>
-            <div class="col-12 col-md-4">
-                <button class="money-minus" onclick="decrement('moneyD')">-</button>
-                <span class="money-output" id="moneyD">£ 700000</span>
-                <button class="money-plus" onclick="increment('moneyD')">+</button>
-            </div>
-        </div>
-        <div class="row buttons-section">
-            <div class="col-4">
-                <button type="button" class="btn btn-secondary" id="start-game">Start Game</button>
-            </div>
-            <div class="col-4">
-                <button type="button" class="btn btn-secondary" id="submit-answer">Submit Answer</button>
-            </div>
-            <div class="col-4">
-                <button type="button" class="btn btn-secondary" id="next-question">Next Question</button>
-            </div>
-        </div>
-        <div class="row instructions-section">
-            <div class="col-8 text-center">
-                <button type="button" class="btn btn-secondary">Instructions</button>
-            </div>
-                <div class="col-2">
-                        <button type="button" class="btn btn-info music-button">Music on/off</button>
+    <!-- Header Content -->
+    <div class="background-image">
+        <div class="container-fluid text-center px-5 py-2">
+            <div class="row">
+                <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                    <img src="assets/images/Million-pound-drop-removebg-preview.png" alt="Logo" id="logo"> <!-- Logo -->
                 </div>
-            
+                <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                    <h1 class="display-5 fw-bolder d-none d-lg-block mb-0">The Million Pound Drop</h1> <!-- Main Title -->
+                </div>
+                <div class="col-1"></div> <!-- Gap -->
+                <div class="col-1 d-flex justify-content-end align-items-center">
+                    <p class="d-none d-lg-block mb-0" id="music-on-off">Music On/Off</p>
+                </div>
+                <div class="col-lg-1 d-flex justify-content-lg-start justify-content-center align-items-center h4 mb-0">
+                    <i class="fa-solid fa-volume-high music-toggle" id="music-toggle-on"></i>
+                    <i class="fa-solid fa-volume-xmark toggle-off music-toggle" id="music-toggle-off"></i>
+                </div>      
+            </div>
+
+            <!-- Questions section -->
+            <div class="row question-section"> 
+                <div class="col-6 question-box d-flex justify-content-center align-items-center">
+                    <h4 class="mb-0" id="question-box">Are you Ready? Click <strong class="fw-bolder">START!</strong></h4> <!-- Question -->
+                </div> 
+                <div class="col-2"></div> <!-- Line Space -->
+                <div class="col-4 total-money-box d-flex justify-content-center align-items-center" id="current-money">
+                    <p class="mb-0">Total Money: <strong class="fw-bolder">£1,000,000</strong></p> <!-- Total Money -->
+                </div> 
+            </div>
+
+            <div class="row answers-section">
+                <div class="col-6 py-2 px-0">
+                    <div class="answer-buttons" id="btnA">Answer A</div> <!-- Answer A -->
+                </div>
+                <div class="col-2"></div>
+                <div class="col-4 money-buttons px-0 py-0 my-2">
+                    <button class="money-minus" onclick="decrement('moneyA')"><i class="fa-solid fa-minus"></i></button>
+                    <span class="money-output d-flex justify-content-center align-items-center" id="moneyA">£0</span>
+                    <button class="money-plus" onclick="increment('moneyA')"><i class="fa-solid fa-plus"></i></button>
+                </div>
+                <div class="col-6 py-2 px-0">
+                    <div class="answer-buttons" id="btnB">Answer B</div> <!-- Answer B -->
+                </div>
+                <div class="col-2"></div>
+                <div class="col-4 money-buttons px-0 py-0 my-2">
+                    <button class="money-minus" onclick="decrement('moneyB')"><i class="fa-solid fa-minus"></i></button>
+                    <span class="money-output d-flex justify-content-center align-items-center" id="moneyB">£0</span>
+                    <button class="money-plus" onclick="increment('moneyB')"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+            <div class="row answers-section">
+                <div class="col-6 py-2 px-0">
+                    <div class="answer-buttons" id="btnC">Answer C</div> <!-- Answer C -->
+                </div>
+                <div class="col-2"></div>
+                <div class="col-4 money-buttons px-0 py-0 my-2">
+                    <button class="money-minus" onclick="decrement('moneyC')"><i class="fa-solid fa-minus"></i></button>
+                    <span class="money-output d-flex justify-content-center align-items-center" id="moneyC">£0</span>
+                    <button class="money-plus" onclick="increment('moneyC')"><i class="fa-solid fa-plus"></i></button>
+                </div>
+
+                <div class="col-6 py-2 px-0">
+                    <div class="answer-buttons" id="btnD">Answer D</div> <!-- Answer D -->
+                </div>
+
+                <div class="col-2"></div>
+                <div class="col-4 money-buttons px-0 py-0 my-2">
+                    <button class="money-minus" onclick="decrement('moneyD')"><i class="fa-solid fa-minus"></i></button>
+                    <span class="money-output d-flex justify-content-center align-items-center" id="moneyD">£0</span>
+                    <button class="money-plus" onclick="increment('moneyD')"><i class="fa-solid fa-plus"></i></button>
+
+                </div>
+            </div>
+            <div class="row buttons-section">
+                <div class="col-md-3 col-12">
+                    <button type="button" class="btn btn-secondary" id="instructions">Instructions</button>
+                </div>
+                <div class="col-md-3 col-12">
+                    <button type="button" class="btn btn-secondary" id="start-game">Start Game</button>
+                </div>
+                <div class="col-2"></div> <!-- Spacing -->
+                <div class="col-md-2 col-12">
+                    <button type="button" class="btn btn-secondary" id="submit-answer">Submit Answer</button>
+                </div>
+                <div class="col-md-2 col-12">
+                    <button type="button" class="btn btn-secondary" id="next-question">Next Question</button>
+                </div>
+            </div>
+
         </div>
-        
     </div>
 
 
 
-
+    <!-- JavaScript -->
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
