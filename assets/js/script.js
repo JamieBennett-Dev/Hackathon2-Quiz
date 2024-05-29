@@ -76,9 +76,29 @@ const quizQuestions = [
 
 let currentIndex = 0;
 let correctAnswer = ''; // Initialize correctAnswer variable
-let totalMoney = "1,000,000";
+let totalMoney = 1000000;
 
 
+
+function formatMoney(amount) {
+    if (amount >= 1000000) {
+        return (amount / 1000000).toFixed(0) + 'M';
+    } else if (amount >= 1000) {
+        return (amount / 1000).toFixed(0) + 'k';
+    } else {
+        return amount.toString();
+    }
+}
+
+function parseMoney(str) {
+    if (str.endsWith('M')) {
+        return parseFloat(str.replace('M', '')) * 1000000;
+    } else if (str.endsWith('k')) {
+        return parseFloat(str.replace('k', '')) * 1000;
+    } else {
+        return parseFloat(str);
+    }
+}
 
 function updateTotalMoney() {
     currentMoneyElement.innerHTML = `Total money: £${totalMoney.toLocaleString()}`;
@@ -148,10 +168,10 @@ function restartGame() {
 // 20 lines submitAnswer function
 function submitAnswer() {
     clearInterval(timer); // Stop the timer when answer is submitted
-    let moneyAValue = parseInt(moneyA.innerText) || 0;
-    let moneyBValue = parseInt(moneyB.innerText) || 0;
-    let moneyCValue = parseInt(moneyC.innerText) || 0;
-    let moneyDValue = parseInt(moneyD.innerText) || 0;
+    let moneyAValue = parseMoney(moneyA.innerText) || 0;
+    let moneyBValue = parseMoney(moneyB.innerText) || 0;
+    let moneyCValue = parseMoney(moneyC.innerText) || 0;
+    let moneyDValue = parseMoney(moneyD.innerText) || 0;
     nextQuestionElement.style.visibility = 'visible';
 
 
@@ -194,22 +214,22 @@ if (answerA.innerText === correctAnswer && moneyAValue > 0) {
 // 20 lines increment and decrement functions
 function increment(id) {
     let element = document.getElementById(id);
-    let currentValue = parseInt(element.innerText) || 0;
+    let currentValue = parseMoney(element.innerText) || 0;
     if (totalMoney >= 100000) {
         currentValue += 100000;
         totalMoney -= 100000;
-        element.innerText = currentValue;
+        element.innerText = formatMoney(currentValue)
         updateTotalMoney();
     }
 }
 
 function decrement(id) {
     let element = document.getElementById(id);
-    let currentValue = parseInt(element.innerText) || 0;
+    let currentValue = parseMoney(element.innerText) || 0;
     if (currentValue >= 100000) {
         currentValue -= 100000;
         totalMoney += 100000;
-        element.innerText = currentValue;
+        element.innerText = formatMoney(currentValue);
         updateTotalMoney();
     }
 }
