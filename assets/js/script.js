@@ -254,20 +254,10 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
-// Instructions Pop Up
-
-function instructionsPopUp()  {
-    let myText = `
-Aim: Player starts with £1000000 and must answer 8 muliple choice questions to keep as much money as possible.
-
-1. Click Start.
-2. Choose how to divide the cash.
-3. Click Submit answer.
-4. Click Next Question.
-5. Repeat until player runs out of money or completes all questions.
-
-    `;
-    alert (myText);
+// When the user clicks on div, open the popup
+function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
   }
     
 
