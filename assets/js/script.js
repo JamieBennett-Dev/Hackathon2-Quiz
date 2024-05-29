@@ -282,3 +282,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
+
+// Instructions Pop Up
+
+function instructionsPopUp()  {
+    let myText = `
+    1. Press Start
+    2.
+    3.`;
+    alert (myText);
+  }
+    
+
+
