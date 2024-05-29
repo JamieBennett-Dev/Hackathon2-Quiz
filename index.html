@@ -48,12 +48,17 @@
                 <div class="col-12 col-sm-6 question-box d-flex justify-content-center align-items-center">
                     <h4 class="mb-0" id="question-box">Are you Ready? Click <strong class="fw-bolder">START!</strong></h4> <!-- Question -->
                 </div> 
-                <div class="col-12 col-sm-2">Time left<div class="mt-0 d-flex justify-content-center align-items-center" id="timer">
-                    <span class="mt-0" id="time-left"></span></div>
-            </div> <!-- Line Space -->
+                 
+            <!-- Line Space -->
                 <div class="col-12 col-sm-4 total-money-box d-flex justify-content-center align-items-center current-money-class" id="current-money">
                     <p class="mb-0">Total Money: <strong class="fw-bolder">£1,000,000</strong></p> <!-- Total Money -->
-                </div> 
+                </div>
+                <div class="col-12 col-sm-2">
+                    <p id="time-title" style="margin-bottom: 0px;">Time left</p>                    
+                    <div class="mt-0 d-flex justify-content-center align-items-center timer-number" id="timer">
+                    <span class="mt-0" id="time-left"></span>
+                </div>
+            </div> 
             </div>
 
             <div class="row answers-section">
@@ -61,10 +66,23 @@
                     <div class="answer-buttons" id="btnA">Answer A</div> <!-- Answer A -->
                 </div>
                 <div class="col-2"></div>
-                <div class="col-4 money-buttons px-0 py-0 my-2">
-                    <button class="money-minus" onclick="decrement('moneyA')"><i class="fa-solid fa-minus"></i></button>
-                    <span class="money-output d-flex justify-content-center align-items-center" id="moneyA">£0</span>
-                    <button class="money-plus" onclick="increment('moneyA')"><i class="fa-solid fa-plus"></i></button>
+
+                <div class="row col-4 money-buttons px-0 py-0 my-2">
+
+                    <div class="col-12">
+                    <div>
+                        <span class="money-output d-flex justify-content-center align-items-center" id="moneyA">£0</span>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="col-12">
+                    <div>
+                        <button class="money-minus" onclick="decrement('moneyA')"><i class="fa-solid fa-minus"></i></button>
+                    </div>
+                    <div>
+                        <button class="money-plus" onclick="increment('moneyA')"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    </div>
                 </div>
                 <div class="col-6 py-2 px-0">
                     <div class="answer-buttons" id="btnB">Answer B</div> <!-- Answer B -->
@@ -75,7 +93,9 @@
                     <span class="money-output d-flex justify-content-center align-items-center" id="moneyB">£0</span>
                     <button class="money-plus" onclick="increment('moneyB')"><i class="fa-solid fa-plus"></i></button>
                 </div>
-            </div>
+            
+
+
             <div class="row answers-section">
                 <div class="col-6 py-2 px-0">
                     <div class="answer-buttons" id="btnC">Answer C</div> <!-- Answer C -->
@@ -101,8 +121,8 @@
             </div>
             <div class="row buttons-section">
                 <div class="col-md-3 col-12">
-                    <button class="popup" onclick="myFunction() "button" class="btn btn-secondary" id="instructions"">Instructions
-                        <span class="popuptext" id="myPopup">Aim: Player starts with £1000000 and must answer 8 multiple choice questions to keep as much money as possible.
+                    <button class="popup" onclick="myFunction() " class="btn btn-secondary" id="instructions"">Instructions
+                        <!-- <span class="popuptext" id="myPopup">Aim: Player starts with £1000000 and must answer 8 multiple choice questions to keep as much money as possible.
                             <br><br>
                             1. Click Start.
                             <br><br>
@@ -112,7 +132,8 @@
                             <br><br>
                             4. Click Next Question.
                             <br><br>
-                            5. Repeat until player runs out of money or completes all questions.</span>
+                            5. Repeat until player runs out of money or completes all questions.
+                        </span> -->
                         </button>
                 </div>
                 <div class="col-md-3 col-12">
