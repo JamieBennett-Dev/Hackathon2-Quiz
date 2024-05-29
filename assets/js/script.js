@@ -282,3 +282,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
+
+// When the user clicks on div, open the popup
+function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+  }
+    
+
+
