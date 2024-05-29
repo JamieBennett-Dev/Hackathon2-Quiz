@@ -12,6 +12,7 @@ const startGameElement = document.getElementById("start-game");
 const submitAnswerElement = document.getElementById("submit-answer");
 const nextQuestionElement = document.getElementById("next-question");
 const instructionsElement = document.getElementById("instructions");
+const timeLeftElement = document.getElementById("time-left");
 
 
 
@@ -108,6 +109,7 @@ function showQuestion () {
         answerD.innerHTML = currentQuestion.options[3];
         correctAnswer = currentQuestion.correctAnswer; // Update correctAnswer variable 
         resetMoneyOutputs();
+        startTimer();
     } else endGame();
 }
 
@@ -137,19 +139,27 @@ function restartGame() {
     currentIndex = 0; // Reset currentIndex
     totalMoney = "1,000,000"; // Reset total money
     updateTotalMoney(); // Update total money display
+    submitAnswerElement.style.visibility = "visible";
     startGame(); // Restart the game
-    nextQuestionElement.removeEventListener("click", restartGame); // Add event listener for restart
+    nextQuestionElement.removeEventListener("click", restartGame); // remove event listener for restart
 }
 
 
 // 20 lines submitAnswer function
 function submitAnswer() {
+    clearInterval(timer); // Stop the timer when answer is submitted
     let moneyAValue = parseInt(moneyA.innerText) || 0;
     let moneyBValue = parseInt(moneyB.innerText) || 0;
     let moneyCValue = parseInt(moneyC.innerText) || 0;
     let moneyDValue = parseInt(moneyD.innerText) || 0;
     nextQuestionElement.style.visibility = 'visible';
 
+
+    // Check if no money has been allocated to any answer
+    if (moneyAValue === 0 && moneyBValue === 0 && moneyCValue === 0 && moneyDValue === 0) {
+        alert("Please allocate money to at least one answer before submitting.");
+        return; // Exit the function early if no money is allocated
+    }
 
 // If the correct answer is clicked, return the money to total
 if (answerA.innerText === correctAnswer && moneyAValue > 0) {
@@ -212,6 +222,25 @@ function resetMoneyOutputs() {
     moneyD.innerText = "0";
 }
 
+function startTimer() {
+    timeLeft = 30; // Set the timer to 30 seconds for each question
+    timeLeftElement.innerText = timeLeft; // Display the initial time
+    clearInterval(timer); // Clear any existing timer to avoid multiple intervals running simultaneously
+    timer = setInterval(() => {
+        timeLeft--;
+        timeLeftElement.innerText = timeLeft;
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            // Handle the case when the time is up (e.g., automatically move to the next question)
+            nextQuestionElement.style.visibility = 'visible';
+            nextQuestionElement.innerHTML = "Restart";
+            submitAnswerElement.style.visibility = "hidden";
+            questionElement.innerHTML = "You ran out of time! You lose.";
+            nextQuestionElement.addEventListener("click", restartGame); // Add event listener for restart
+            endGame();
+        }
+    }, 1000);
+}
 
 // addEventListeners 
 

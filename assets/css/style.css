@@ -236,6 +236,12 @@ p {
 }
 
 
+#timer {
+    color: fff;
+    margin-top: 30px;
+    font-size: 4rem;
+}
+
 /* Popup container - can be anything you want */
 .popup {
     position: relative;
