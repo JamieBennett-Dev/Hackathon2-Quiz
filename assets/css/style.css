@@ -104,7 +104,6 @@ p {
     border: 4px solid #f1f1f1; 
     background-color: rgba(0,0,0,.5);
     color: #f1f1f1;
-    text-shadow: -2px -2px 0 #f00f0a, 2px -2px 0 #f00f0a, -2px 2px 0 #f00f0a, 2px 2px 0 #f00f0a;
     padding: 10px;
     border-radius: 8px; 
     font-family: 'Orbitron', sans-serif;
@@ -112,6 +111,37 @@ p {
     font-weight: bolder;
     transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
+
+@keyframes flash-correct {
+    0%, 100% {
+        background-color: green;
+        color: white;
+    }
+    20% {
+        background-color: white;
+        color: green;
+    }
+}
+
+@keyframes flash-wrong {
+    0%, 100% {
+        background-color: red;
+        color: white;
+    }
+    20% {
+        background-color: white;
+        color: red;
+    }
+}
+
+.correct-answer {
+    animation: flash-correct 1s infinite;
+}
+
+.wrong-answer {
+    animation: flash-wrong 1s infinite;
+}
+
 
 #music-on-off {
     font-size: smaller;
@@ -141,11 +171,6 @@ p {
 
 .money-buttons i {
     color: #f1f1f1;
-}
-
-.answer-buttons:hover {
-    border: 4px solid #f00f0a;
-    background-color: rgba(0,0,0,0.75);
 }
 
 .money-minus {
@@ -225,11 +250,11 @@ p {
         font-size: 0.55rem; 
     }
     .answer-buttons {
-        font-size: 0.75rem;
+        font-size: 0.5rem;
     }
 
     .money-buttons span {
-        font-size: xx-small;
+        font-size: 0.3rem;
         font-family: 'Orbitron', sans-serif;
     }
 
@@ -237,6 +262,7 @@ p {
         border: 4px solid #f1f1f1; 
         background-color: rgba(0,0,0,.5);
         border-radius: 8px; 
+        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: space-evenly;
