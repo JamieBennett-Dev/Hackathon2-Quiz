@@ -266,10 +266,10 @@ function decrement(id) {
 
 
 function resetMoneyOutputs() {
-    moneyA.innerText = "0";
-    moneyB.innerText = "0";
-    moneyC.innerText = "0";
-    moneyD.innerText = "0";
+    moneyA.innerText = "£0";
+    moneyB.innerText = "£0";
+    moneyC.innerText = "£0";
+    moneyD.innerText = "£0";
 }
 
 function startTimer() {
