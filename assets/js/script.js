@@ -37,12 +37,12 @@ const quizQuestions = [
     // medium questions, 4-6
     {
         question: "What is the currency of Japan?",
-        options: ["Yen", "Yuan", "Euro", "Yen"],
+        options: ["Yen", "Yuan", "Euro", "Yawn"],
         correctAnswer: "Yen"
     },
     {
         question: "Who invented the telephone?",
-        options: ["Thomas Edison", "Alexander Graham Bell", "Nikola Tesla", "Alexander Graham Bell"],
+        options: ["Thomas Edison", "Alexander Graham Bell", "Nikola Tesla", "Johann Philipp Reis"],
         correctAnswer: "Alexander Graham Bell"
     },
     {
@@ -79,7 +79,7 @@ let correctAnswer = ''; // Initialize correctAnswer variable
 let totalMoney = 1000000;
 
 
-
+// this function formats the money. So instead of 100,000 it returns 100k
 function formatMoney(amount) {
     if (amount >= 1000000) {
         return (amount / 1000000).toFixed(0) + 'M';
@@ -90,6 +90,7 @@ function formatMoney(amount) {
     }
 }
 
+// this function takes a string and returns and numerical value 
 function parseMoney(str) {
     if (str.endsWith('M')) {
         return parseFloat(str.replace('M', '')) * 1000000;
