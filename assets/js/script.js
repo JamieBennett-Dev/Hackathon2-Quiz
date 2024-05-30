@@ -136,6 +136,7 @@ function showQuestion () {
 
 // 20 lines of nextQustion function
 function nextQuestion() {
+    submitAnswerElement.style.visibility = 'visible';
     updateTotalMoney();
     currentIndex++;
     nextQuestionElement.style.visibility = 'hidden';
@@ -202,6 +203,7 @@ if (answerA.innerText === correctAnswer && moneyAValue > 0) {
     } else {
         moneyD.innerText = "DROPPED!"; 
     }
+    submitAnswerElement.style.visibility = 'hidden';
         
         updateTotalMoney();
 
