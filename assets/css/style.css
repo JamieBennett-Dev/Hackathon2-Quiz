@@ -104,7 +104,6 @@ p {
     border: 4px solid #f1f1f1; 
     background-color: rgba(0,0,0,.5);
     color: #f1f1f1;
-    text-shadow: -2px -2px 0 #f00f0a, 2px -2px 0 #f00f0a, -2px 2px 0 #f00f0a, 2px 2px 0 #f00f0a;
     padding: 10px;
     border-radius: 8px; 
     font-family: 'Orbitron', sans-serif;
@@ -112,6 +111,37 @@ p {
     font-weight: bolder;
     transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
+
+@keyframes flash-correct {
+    0%, 100% {
+        background-color: green;
+        color: white;
+    }
+    20% {
+        background-color: white;
+        color: green;
+    }
+}
+
+@keyframes flash-wrong {
+    0%, 100% {
+        background-color: red;
+        color: white;
+    }
+    20% {
+        background-color: white;
+        color: red;
+    }
+}
+
+.correct-answer {
+    animation: flash-correct 1s infinite;
+}
+
+.wrong-answer {
+    animation: flash-wrong 1s infinite;
+}
+
 
 #music-on-off {
     font-size: smaller;
@@ -141,11 +171,6 @@ p {
 
 .money-buttons i {
     color: #f1f1f1;
-}
-
-.answer-buttons:hover {
-    border: 4px solid #f00f0a;
-    background-color: rgba(0,0,0,0.75);
 }
 
 .money-minus {
@@ -204,7 +229,7 @@ p {
 
 
 /* Custom CSS Media Queries for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 840px) {
     .question-box h4 {
         font-size: 1.25rem; 
     }
@@ -213,6 +238,17 @@ p {
     }
     .answer-buttons {
         font-size: 0.75rem;
+    }
+
+    #timer {
+        color: fff;
+        margin-top: 0;
+    }
+
+    #time-left {
+        color: fff;
+        margin-top: 30px;
+        font-size: 1.3rem;
     }
 }
 
@@ -225,11 +261,16 @@ p {
         font-size: 0.55rem; 
     }
     .answer-buttons {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
     }
+    
+    .money-number-output {
+        width: 200px;
+    }
+    
 
     .money-buttons span {
-        font-size: xx-small;
+        font-size: 0.5rem;
         font-family: 'Orbitron', sans-serif;
     }
 
@@ -240,9 +281,43 @@ p {
         display: flex;
         align-items: center;
         justify-content: space-evenly;
+        padding: 0;
         transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
         font-size: xx-small;
+        width: 100px;
     }
+
+    .money-minus {
+        width: 30px;
+        height: 40px;
+        border-radius: 0;
+        background-image:
+        -webkit-radial-gradient(50% 0%, 8% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0)100%),
+        -webkit-radial-gradient(50% 100%, 12% 50%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0)100%),
+        -webkit-radial-gradient(0% 50%, 50% 7%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0)100%),
+        -webkit-radial-gradient(100% 50%, 50% 5%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0)100%),
+        -webkit-repeating-radial-gradient(50% 50%, 100% 100%, rgba(44, 0, 0, 0) 0%, rgba(44, 0, 0, 0) 3%, rgba(44, 0, 0, 0) 3.5%),
+        -webkit-repeating-radial-gradient(50% 50%, 100% 100%, rgba(255, 30, 30, 0) 0%, rgba(255, 30, 30, 0) 6%, rgba(255, 30, 30, 0.1) 7.5%),
+        -webkit-repeating-radial-gradient(50% 50%, 100% 100%, rgba(210, 25, 25, 0) 0%, rgba(210, 25, 25, 0) 1.2%, rgba(210, 25, 25, 0.2) 2.2%),
+        -webkit-radial-gradient(50% 50%, 200% 50%, rgb(130, 10, 10) 5%, rgb(120, 10, 10) 30%, rgb(170, 17, 17) 100%);
+    }
+
+    .money-plus {
+        border-radius: 50%;
+        width: 30px;
+        height: 40px;
+        border-radius: 0;
+        background-image:
+        -webkit-radial-gradient(50% 0%, 8% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0)100%),
+        -webkit-radial-gradient(50% 100%, 12% 50%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0)100%),
+        -webkit-radial-gradient(0% 50%, 50% 7%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0)100%),
+        -webkit-radial-gradient(100% 50%, 50% 5%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0)100%),
+        -webkit-repeating-radial-gradient(50% 50%, 100% 100%, rgba(44, 0, 0, 0) 0%, rgba(44, 0, 0, 0) 3%, rgba(44, 0, 0, 0) 3.5%),
+        -webkit-repeating-radial-gradient(50% 50%, 100% 100%, rgba(255, 30, 30, 0) 0%, rgba(255, 30, 30, 0) 6%, rgba(255, 30, 30, 0.1) 7.5%),
+        -webkit-repeating-radial-gradient(50% 50%, 100% 100%, rgba(210, 25, 25, 0) 0%, rgba(210, 25, 25, 0) 1.2%, rgba(210, 25, 25, 0.2) 2.2%),
+        -webkit-radial-gradient(50% 50%, 200% 50%, rgb(130, 10, 10) 5%, rgb(120, 10, 10) 30%, rgb(170, 17, 17) 100%);
+    }
+
 
     .total-money-box {
         font-size: x-small;
@@ -258,6 +333,7 @@ p {
         margin-top: 30px;
         font-size: 1.5rem;
     }
+
 }
 
 /* Custom scrollbar */
@@ -366,3 +442,4 @@ p {
     border: 4px solid #2ECA16;
     text-shadow: -1px -1px 0 #2ECA16, 1px -1px 0 #2ECA16, -1px 1px 0 #2ECA16, 1px 1px 0 #2ECA16;
 }
+
