@@ -63,38 +63,27 @@
 
             <div class="row answers-section">
                 <div class="col-6 py-2 px-0">
-                    <div class="answer-buttons" id="btnA">Answer A</div> <!-- Answer A -->
+                    <div class="answer-buttons" id="btnA">Answer A</div> <!-- Answer C -->
                 </div>
                 <div class="col-2"></div>
-
-                <div class="row col-4 money-buttons px-0 py-0 my-2">
-
-                    <div class="col-12">
-                    <div>
-                        <span class="money-output d-flex justify-content-center align-items-center" id="moneyA">£0</span>
-                    </div>
-                    </div>
-                    </div>
-                    <div class="col-12">
-                    <div>
-                        <button class="money-minus" onclick="decrement('moneyA')"><i class="fa-solid fa-minus"></i></button>
-                    </div>
-                    <div>
-                        <button class="money-plus" onclick="increment('moneyA')"><i class="fa-solid fa-plus"></i></button>
-                    </div>
-                    </div>
+                <div class="col-4 money-buttons px-0 py-0 my-2">
+                    <button class="money-minus" onclick="decrement('moneyA')"><i class="fa-solid fa-minus"></i></button>
+                    <span class="money-output d-flex justify-content-center align-items-center" id="moneyA">£0</span>
+                    <button class="money-plus" onclick="increment('moneyA')"><i class="fa-solid fa-plus"></i></button>
                 </div>
+
                 <div class="col-6 py-2 px-0">
-                    <div class="answer-buttons" id="btnB">Answer B</div> <!-- Answer B -->
+                    <div class="answer-buttons" id="btnB">Answer B</div> <!-- Answer D -->
                 </div>
+
                 <div class="col-2"></div>
                 <div class="col-4 money-buttons px-0 py-0 my-2">
                     <button class="money-minus" onclick="decrement('moneyB')"><i class="fa-solid fa-minus"></i></button>
                     <span class="money-output d-flex justify-content-center align-items-center" id="moneyB">£0</span>
                     <button class="money-plus" onclick="increment('moneyB')"><i class="fa-solid fa-plus"></i></button>
-                </div>
-            
 
+                </div>
+            </div>
 
             <div class="row answers-section">
                 <div class="col-6 py-2 px-0">
@@ -120,6 +109,17 @@
                 </div>
             </div>
             <div class="row buttons-section">
+
+                <div class="col-md-3 col-12">
+                    <button type="button" class="btn btn-secondary" id="start-game">Start Game</button>
+                </div>
+                <div class="col-2"></div> <!-- Spacing -->
+                <div class="col-md-2 col-12">
+                    <button type="button" class="btn btn-secondary" id="submit-answer">Submit Answer</button>
+                </div>
+                <div class="col-md-2 col-12">
+                    <button type="button" class="btn btn-secondary" id="next-question">Next Question</button>
+                </div>
                 <div class="col-md-3 col-12">
                     <button class="popup" onclick="myFunction() " class="btn btn-secondary" id="instructions"">Instructions
                         <!-- <span class="popuptext" id="myPopup">Aim: Player starts with £1000000 and must answer 8 multiple choice questions to keep as much money as possible.
@@ -135,16 +135,6 @@
                             5. Repeat until player runs out of money or completes all questions.
                         </span> -->
                         </button>
-                </div>
-                <div class="col-md-3 col-12">
-                    <button type="button" class="btn btn-secondary" id="start-game">Start Game</button>
-                </div>
-                <div class="col-2"></div> <!-- Spacing -->
-                <div class="col-md-2 col-12">
-                    <button type="button" class="btn btn-secondary" id="submit-answer">Submit Answer</button>
-                </div>
-                <div class="col-md-2 col-12">
-                    <button type="button" class="btn btn-secondary" id="next-question">Next Question</button>
                 </div>
             </div>
 
