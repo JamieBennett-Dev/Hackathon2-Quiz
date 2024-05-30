@@ -104,7 +104,6 @@ p {
     border: 4px solid #f1f1f1; 
     background-color: rgba(0,0,0,.5);
     color: #f1f1f1;
-    text-shadow: -2px -2px 0 #f00f0a, 2px -2px 0 #f00f0a, -2px 2px 0 #f00f0a, 2px 2px 0 #f00f0a;
     padding: 10px;
     border-radius: 8px; 
     font-family: 'Orbitron', sans-serif;
@@ -112,6 +111,37 @@ p {
     font-weight: bolder;
     transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
+
+@keyframes flash-correct {
+    0%, 100% {
+        background-color: green;
+        color: white;
+    }
+    50% {
+        background-color: white;
+        color: green;
+    }
+}
+
+@keyframes flash-wrong {
+    0%, 100% {
+        background-color: red;
+        color: white;
+    }
+    50% {
+        background-color: white;
+        color: red;
+    }
+}
+
+.correct-answer {
+    animation: flash-correct 1s infinite;
+}
+
+.wrong-answer {
+    animation: flash-wrong 1s infinite;
+}
+
 
 #music-on-off {
     font-size: smaller;

@@ -136,6 +136,11 @@ function showQuestion () {
 
 // 20 lines of nextQustion function
 function nextQuestion() {
+        // Remove existing animation classes before applying new ones
+        answerA.classList.remove('correct-answer', 'wrong-answer');
+        answerB.classList.remove('correct-answer', 'wrong-answer');
+        answerC.classList.remove('correct-answer', 'wrong-answer');
+        answerD.classList.remove('correct-answer', 'wrong-answer');
     submitAnswerElement.style.visibility = 'visible';
     updateTotalMoney();
     currentIndex++;
@@ -182,26 +187,49 @@ function submitAnswer() {
         return; // Exit the function early if no money is allocated
     }
 
-// If the correct answer is clicked, return the money to total
-if (answerA.innerText === correctAnswer && moneyAValue > 0) {
-    totalMoney += moneyAValue;
+
+    // Highlight correct answer regardless of money allocation
+    if (answerA.innerText === correctAnswer) {
+        answerA.classList.add('correct-answer');
+    } else {
+        answerA.classList.add('wrong-answer');
+    }
+    if (answerB.innerText === correctAnswer) {
+        answerB.classList.add('correct-answer');
+    } else {
+        answerB.classList.add('wrong-answer');
+    }
+    if (answerC.innerText === correctAnswer) {
+        answerC.classList.add('correct-answer');
+    } else {
+        answerC.classList.add('wrong-answer');
+    }
+    if (answerD.innerText === correctAnswer) {
+        answerD.classList.add('correct-answer');
+    } else {
+        answerD.classList.add('wrong-answer');
+    }
+
+    // Update total money and reset the wrong answer money
+    if (answerA.innerText === correctAnswer) {
+        totalMoney += moneyAValue;
     } else {
         moneyA.innerText = "DROPPED!"; // Reset the money for the wrong answer to 0
     }
-    if (answerB.innerText === correctAnswer && moneyBValue > 0) {
+    if (answerB.innerText === correctAnswer) {
         totalMoney += moneyBValue;
     } else {
-        moneyB.innerText = "DROPPED!"; 
+        moneyB.innerText = "DROPPED!";
     }
-    if (answerC.innerText === correctAnswer && moneyCValue > 0) {
+    if (answerC.innerText === correctAnswer) {
         totalMoney += moneyCValue;
     } else {
-        moneyC.innerText = "DROPPED!"; 
+        moneyC.innerText = "DROPPED!";
     }
-    if (answerD.innerText === correctAnswer && moneyDValue > 0) {
+    if (answerD.innerText === correctAnswer) {
         totalMoney += moneyDValue;
     } else {
-        moneyD.innerText = "DROPPED!"; 
+        moneyD.innerText = "DROPPED!";
     }
     submitAnswerElement.style.visibility = 'hidden';
         
