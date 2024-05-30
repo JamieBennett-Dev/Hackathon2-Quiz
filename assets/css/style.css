@@ -57,7 +57,7 @@ h1:hover {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 100%;
+    height: 100vh;
     width: 100%;
 }
 
@@ -362,3 +362,84 @@ p {
     margin-top: 30px;
     font-size: 4rem;
 }
+
+/* Modal */
+.modal-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+}
+
+.modal-content {
+    background: rgba(240, 15, 10, 0.75);
+    border: 4px solid #f1f1f1;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 1000px;
+    width: 90%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.modal-content::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #270301;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #FB7B74;
+    border-radius: 100vw;
+    cursor: pointer;
+    border: 2px solid #270301;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background-color: #FDC7C4;
+}
+
+.modal-content h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #f1f1f1;
+    font-weight: bolder;
+    text-decoration: underline;
+    text-shadow: -2px -2px 0 #270301, 2px -2px 0 #270301, -2px 2px 0 #270301, 2px 2px 0 #270301;
+}
+
+.modal-content h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: x-large;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.modal-content p, li {
+    font-family: 'Poppins', sans-serif;
+    color: #f1f1f1;
+    font-size: large;
+}
+
+.modal-content button {
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 4px solid #f1f1f1;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: -1px -1px 0 #f00f0a, 1px -1px 0 #f00f0a, -1px 1px 0 #f00f0a, 1px 1px 0 #f00f0a;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal-content button:hover {
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 4px solid #2ECA16;
+    text-shadow: -1px -1px 0 #2ECA16, 1px -1px 0 #2ECA16, -1px 1px 0 #2ECA16, 1px 1px 0 #2ECA16;
+}
+
