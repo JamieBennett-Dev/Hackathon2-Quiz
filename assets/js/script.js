@@ -305,11 +305,16 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
-// When the user clicks on div, open the popup
-function myFunction() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-  }
-    
+// Modal
+
+document.getElementById('instructions').addEventListener('click', function() {
+    document.getElementById('modal-container').style.display = 'flex';
+});
+
+document.getElementById('close-modal').addEventListener('click', function() {
+    document.getElementById('modal-container').style.display = 'none';
+});
+
+
 
 

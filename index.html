@@ -7,6 +7,7 @@
     <!-- Google Fonts -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     </style>
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/6e20b8d34b.js" crossorigin="anonymous"></script>
@@ -46,7 +47,8 @@
 
             <!-- Questions section -->
             <div class="row question-section">
-                <div class="col-12 col-sm-6 question-box d-flex justify-content-center align-items-center me-0 order-1 order-sm-1">
+                <div
+                    class="col-12 col-sm-6 question-box d-flex justify-content-center align-items-center me-0 order-1 order-sm-1">
                     <h4 class="mb-0" id="question-box">Are you Ready? Click <strong class="fw-bolder">START!</strong>
                     </h4> <!-- Question -->
                 </div>
@@ -61,7 +63,7 @@
                     id="current-money">
                     <p class="mb-0">Total Money: <strong class="fw-bolder">£1,000,000</strong></p> <!-- Total Money -->
                 </div>
-                
+
             </div>
 
             <div class="row answers-section">
@@ -114,21 +116,46 @@
             <div class="row buttons-section">
 
                 <div class="col-md-3 col-12 order-md-1 order-last">
-                    <button class="btn btn-secondary" id="instructions">Instructions
-                        <!-- <span>
-                            Aim: Player starts with £1000000 and must answer 8 multiple choice questions to keep as much money as possible.
-                            <br><br>
-                            1. Click Start.
-                            <br><br>
-                            2. Choose how to divide the cash.
-                            <br><br>
-                            3. Click Submit answer.
-                            <br><br>
-                            4. Click Next Question.
-                            <br><br>
-                            5. Repeat until player runs out of money or completes all questions.
-                        </span> -->
-                    </button>
+                    <button class="btn btn-secondary" id="instructions">Instructions</button>
+                    <div class="modal-container" id="modal-container">
+                        <div class="modal-content">
+                            <h2>The Million Pound Drop!</h1>
+                                <h3>Objective: </h3>
+                                <ul>
+                                    <li>The player starts with £1,000,000 in the bank and must answer 10 multiple choice questions. Your aim is to keep as much money as possible.</li>
+                                </ul>
+                                <h3>Questions: </h3>
+                                <ul>
+                                    <li>Each round presents contestants with a question and four possible answers.</li>
+                                    <li>Contestants must decide which answer they believe to be correct.</li>
+                                </ul>
+                                <h3>Money Allocation: </h3>
+                                <ul>
+                                    <li>Contestants start the game with a total of one million pounds.</li>
+                                    <li>Contestents distribute this money among the answer choices by placing it on trapdoors corresponding to their chosen answers.</li>
+                                    <li>Money can be distributed unevenly or placed entirely on one answer.</li>
+                                </ul>
+                                <h3>Time Limit: </h3>
+                                <ul>
+                                    <li>Contestants have a 30 seconds to allocate their money before incorrect trapdoors open, causing any money placed on them to be lost.</li>
+                                </ul>
+                                <h3>Drop Zone: </h3>
+                                <ul>
+                                    <li>Money placed on trapdoors corresponding to incorrect answers falls through a "drop zone" and is lost from the game.</li>
+                                </ul>
+                                <h3>Correct Answer Reveal: </h3>
+                                <ul>
+                                    <li>After incorrect trapdoors drop, the correct answer is revealed.</li>
+                                    <li>Any money placed on correct answers is retained by the contestants.</li>
+                                </ul>
+                                <h3>Elimination: </h3>
+                                <ul>
+                                    <li>Contestants are eliminated if they lose all their money in any round.</li>
+                                </ul>
+                                
+                            <button class="btn btn-secondary" id="close-modal">Close</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-3 col-12 order-md-2">
                     <button type="button" class="btn btn-secondary" id="start-game">Start Game</button>
