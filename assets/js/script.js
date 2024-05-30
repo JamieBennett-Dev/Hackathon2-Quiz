@@ -20,51 +20,51 @@ const timeLeftElement = document.getElementById("time-left");
 const quizQuestions = [
     // easy questions, 1-3
     {
-        question: "What is the name of the wizarding school that Harry Potter attends?",
-        options: ["Code Institute: School of Magical Programming", "Hogwarts School of Witchcraft and Wizardry", "Merlin's Academy", "Salem School of Magic"],
-        correctAnswer: "Hogwarts School of Witchcraft and Wizardry"
+        question: "What is the smallest prime number?",
+        options: ["1", "2", "3", "4"],
+        correctAnswer: "2"
     },
     {
-        question: "Who wrote 'Romeo and Juliet'?",
-        options: ["Jane Austin", "Charles Dickins", "William Shakespeare", "Elon Musk"],
-        correctAnswer: "William Shakespeare"
+        question: "Chemical symbol for gold?",
+        options: ["Ag", "Fe", "Au", "Pb"],
+        correctAnswer: "Au"
     },
     {
-        question: "What is the chemical symbol for water",
-        options: ["CO²", "O²", "H²O", "U-235"],
-        correctAnswer: "H²O"
+        question: "What is Einstein's theory?",
+        options: ["Relativity", "Evolution", "Quantum", "Gravity"],
+        correctAnswer: "Relativity"
     },
     // medium questions, 4-6
     {
-        question: "Which athlete is known as 'The Greatest' and considered one of the most significant and celebrated sports figures of the 20th century?",
-        options: ["Michael Jordan", "Serena Williams", "Muhammad Ali", "Usain Bolt"],
-        correctAnswer: "Muhammad Ali"
+        question: "What is the currency of Japan?",
+        options: ["Yen", "Yuan", "Euro", "Yen"],
+        correctAnswer: "Yen"
     },
     {
-        question: "Which company developed the Windows operating system?",
-        options: ["Apple", "Microsoft", "Google", "IBM"],
-        correctAnswer: "Microsoft"
+        question: "Who invented the telephone?",
+        options: ["Thomas Edison", "Alexander Graham Bell", "Nikola Tesla", "Alexander Graham Bell"],
+        correctAnswer: "Alexander Graham Bell"
     },
     {
-        question: "Which is the best Premier League team?",
-        options: ["Aaaaaaaaaarsenal", "Shity Leeds", "Tottenshit", "Man Idiot"],
-        correctAnswer: "Aaaaaaaaaarsenal"
+        question: "What is the capital city of Australia?",
+        options: ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+        correctAnswer: "Canberra"
     },
     // hard questions, 7-9
     {
-        question: "In which country did the pineapple originate?",
-        options: ["Brazil", "Hawaii", "Philippines", "Mexico"],
-        correctAnswer: "Brazil" 
+        question: "In Greek mythology, who was the goddess of wisdom?",
+        options: ["Athena", "Aphrodite", "Hera", "Artemis"],
+        correctAnswer: "Athena" 
     },
     {
-        question: "What is the smallest ocean in the world?",
-        options: ["Atlantic Ocean", "Indian Ocean", "Southern Ocean", "Arctic Ocean"],
-        correctAnswer: "Arctic Ocean" 
+        question: "Which planet is closest to the Sun?",
+        options: ["Mars", "Venus", "Jupiter", "Mercury"],
+        correctAnswer: "Mercury" 
     },
     {
-        question: "Which mammal is the only animal capable of flight backwards?",
-        options: ["Bat", "Hummingbird", "Flying fox", "Pterosaur"],
-        correctAnswer: "Hummingbird" 
+        question: "What is the largest desert in the world?",
+        options: ["Sahara Desert", "Antarctica", "Arabian Desert", "Gobi Desert"],
+        correctAnswer: "Antarctica" 
     },
     // impossible question, 10
     {
