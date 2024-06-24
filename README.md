@@ -53,10 +53,6 @@ As the developer, I would like the the correct answer to flash green and wrong a
 <img src="assets/images/Correct-Uncorrect.png" alt="Correct Uncorrect">
 ✅ Color flash to designate correct and incorrect answers.
 
-### MoSCoW Table
-
-<img src="" alt="">
-
 ## Wireframes 
 
 Desktop
@@ -65,35 +61,4 @@ Desktop
 Mobile
 <img src="assets/images/Wireframe-Mobile.png" alt="Low Fidelity Mobile Wireframe">
 
-
-## Testing
-
-### Feature Testing
-
-<img src="" alt="">
-
-### Validator Testing
-
-<!-- CSS -->
-<img src="" alt="">
-
-<!-- HTML -->
-<img src="" alt="">
-
-<!-- JavaScript -->
-<img src="" alt="">
-
-### Identified Bugs
-
-## Deployment
-
-<img src="" alt="">
-
-## Credits
-
-### Content
-
-### Media
-
-######
 
