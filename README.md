@@ -10,7 +10,7 @@ For the Code Institute Bootcamp Hackathon #2, our team decided to complete the q
 
 - __Sitewide__
 - As a user, I want the quiz to be mobile-responsive, so that I can play the game on tablet and mobile devices.
-![image info](assets/images/MPD-Iphone%20page%20screen%20shot%20.png)
+![image info](assets/images/MPD-Iphone.png)
 ✅ All Pages are fully functional on mobile and tablet devices.
 
 ###### Homepage
